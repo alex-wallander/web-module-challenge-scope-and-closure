@@ -70,7 +70,7 @@ NOTE: This will be a callback function for the tasks below
 */
 
 function inning(){
-    var chanceRun = Math.round(Math.random()*3);
+    var chanceRun = Math.round(Math.random()*2);
     return chanceRun;
 }
 console.log(inning);
@@ -88,10 +88,16 @@ Use the finalScore function below to do the following:
   "Away": 5
 }
 */ 
-
-function finalScore(/*code Here*/){
-  /*Code Here*/
+function finalScore(callback, numInnings){
+  let home = 0;
+  let away = 0;
+  for (let i = 0; i < numInnings; i++){
+    home += callback();
+    away += callback();
+  }
+  return {'Away': away, 'Home': home}
 }
+
 
 /* ⚾️⚾️⚾️ Task 4: getInningScore() ⚾️⚾️⚾️
 Use the getInningScore() function below to do the following:
