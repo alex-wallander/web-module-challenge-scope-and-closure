@@ -89,14 +89,21 @@ Use the finalScore function below to do the following:
 }
 */ 
 function finalScore(callback, numInnings){
-  let home = 0;
-  let away = 0;
-  for (let i = 0; i < numInnings; i++){
-    home += callback();
-    away += callback();
+  let homeScore = 0;
+  let awayScore = 0;
+  for (let i = 1; i < numInnings; i++) {
+    homeScore += callback();
   }
-  return {'Away': away, 'Home': home}
-}
+  for (let i = 1; i <= numInnings; i++) {
+    awayScore += callback();
+  }
+  const scores = {
+    Home: homeScore,
+    Away: awayScore
+  }
+  return scores;
+  }
+  finalScore(inning, 9);
 
 
 /* ⚾️⚾️⚾️ Task 4: getInningScore() ⚾️⚾️⚾️
