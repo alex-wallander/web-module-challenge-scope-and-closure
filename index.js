@@ -29,7 +29,7 @@ console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
   
   1. What is the difference between counter1 and counter2?
 
-  The let variable is on the outside of the function in counter2
+  The let variable is on the outside of the function
   
   2. Which of the two uses a closure? How can you tell?
 
@@ -38,7 +38,9 @@ console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
   3. In what scenario would the counter1 code be preferable? In what scenario would 
      counter2 be better?  
 
-    counter1 would be preferred when you want to use a scope of variables to return an object with the results that you want. counter2 would be preferred when you want to use in variable in the invoking process
+    counter1 would be preffered when you use a range of variables to return an object based on those variables. counter2 would be preferred when you want to bind a variable and invoke based on that global variable
+
+*/
 
 // counter1 code
 function counterMaker() {
