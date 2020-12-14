@@ -70,10 +70,9 @@ NOTE: This will be a callback function for the tasks below
 */
 
 function inning(){
-    var chanceRun = Math.round(Math.random()*2);
-    return chanceRun;
+    return Math.floor(Math.random()*3);
 }
-console.log(inning);
+console.log(inning());
 
 /* ⚾️⚾️⚾️ Task 3: finalScore() ⚾️⚾️⚾️
 Use the finalScore function below to do the following:
@@ -111,10 +110,12 @@ Use the getInningScore() function below to do the following:
   1. Receive a callback function - you will pass in the inning function from task 2 as your argument 
   2. Return an object with a score for home and a score for away that populates from invoking the inning callback function */
 
-function getInningScore(/*Your Code Here */) {
-  /*Your Code Here */
+function getInningScore(inning) {
+  let home = inning();
+  let away = inning();
+  return {"Away" :away, "Home" :home }
 }
-
+getInningScore(inning);
 
 /* ⚾️⚾️⚾️ Task 5: scoreboard() ⚾️⚾️⚾️
 Use the scoreboard function below to do the following:
